@@ -1,3 +1,3 @@
 import simple from './simple'
-
-export default [simple]
+import first from './first'
+export default [first, simple]

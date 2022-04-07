@@ -2,6 +2,7 @@ import { defineComponent, reactive, Ref, ref, watchEffect } from 'vue'
 import { createUseStyles } from 'vue-jss'
 import MonacoEditor from '@/components/MonacoEditor'
 import demos from '@/demos'
+import SchemaForm from '../lib/SchemaForm'
 // import Schema from '../lib'
 
 const useStyle = createUseStyles({
@@ -162,7 +163,15 @@ export default defineComponent({
                 />
               </div>
             </div>
-            <div class={classes.component}>组件内容</div>
+            <div class={classes.component}>
+              <SchemaForm
+                schema={demo.schema}
+                value={demo.data}
+                onChange={(v: any) => {
+                  console.log(v)
+                }}
+              ></SchemaForm>
+            </div>
           </div>
         </div>
       )
